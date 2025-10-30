@@ -65,11 +65,11 @@ Demonstrates all 4 suggest methods:
 - `suggest_print_all()` - Print suggestions as JSON
 - `suggest_print_nested()` - Print nested suggestions as JSON
 
-### 8. Web UI (public/ + api/)
-Ships an HTML/JavaScript front-end (in `public/`) backed by the serverless API
-in `api/index.py`. Deploy both folders to Vercel (or serve the `public/`
-directory as static files and point the JavaScript to the API) to explore the
-scraper from your browser.
+### 8. Web UI (ui/ + api/)
+Ships an HTML/JavaScript front-end (in `ui/`) backed by the serverless API
+in `api/index.py`.  Deploy both folders to Vercel (or serve `ui/` as static
+files and point the JavaScript to the API) to explore the scraper from your
+browser.
 
 ## Running Examples
 
