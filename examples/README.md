@@ -65,6 +65,14 @@ Demonstrates all 4 suggest methods:
 - `suggest_print_all()` - Print suggestions as JSON
 - `suggest_print_nested()` - Print nested suggestions as JSON
 
+### 8. Web UI (public/ + api/)
+Ships an HTML/JavaScript front-end (in `public/`) backed by the serverless API
+in `api/index.py`. Deploy both folders to Vercel (or serve the `public/`
+directory as static files and point the JavaScript to the API) to explore the
+scraper from your browser. Vercel's default Python runtime is sufficient for the
+API, so you don't need to override it in `vercel.json`—removing that override
+avoids build failures that complain about invalid runtime versions.
+
 ## Running Examples
 
 ```bash
@@ -76,6 +84,8 @@ python examples/developer_methods_example.py
 python examples/list_methods_example.py
 python examples/similar_methods_example.py
 python examples/suggest_methods_example.py
+# Launch the Vercel web UI locally
+vercel dev
 ```
 
 ## Note
