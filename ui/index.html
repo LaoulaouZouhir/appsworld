@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GPlay Scraper Web UI</title>
+    <link rel="stylesheet" href="/ui/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>GPlay Scraper Web UI</h1>
+      <p>
+        Interactively explore the main <code>GPlayScraper</code> workflows. Provide the
+        required parameters for each section and submit the form to run the
+        scraper inside a Vercel serverless function.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel" id="app-panel">
+        <h2>App details</h2>
+        <form data-action="app" class="stack" id="app-form">
+          <label>
+            App ID
+            <input type="text" name="appId" value="com.whatsapp" required />
+          </label>
+          <label>
+            Language
+            <input type="text" name="lang" value="en" />
+          </label>
+          <label>
+            Country
+            <input type="text" name="country" value="us" />
+          </label>
+          <label>
+            Asset size
+            <select name="assets">
+              <option value="">Default</option>
+              <option value="SMALL">SMALL</option>
+              <option value="MEDIUM">MEDIUM</option>
+              <option value="LARGE">LARGE</option>
+              <option value="ORIGINAL">ORIGINAL</option>
+            </select>
+          </label>
+          <label>
+            Fields (comma separated)
+            <input type="text" name="fields" placeholder="title,developer" />
+          </label>
+          <button type="submit">Run</button>
+        </form>
+      </section>
+
+      <section class="panel" id="search-panel">
+        <h2>Search</h2>
+        <form data-action="search" class="stack" id="search-form">
+          <label>
+            Query
+            <input type="text" name="query" value="productivity" required />
+          </label>
+          <label>
+            Count
+            <input type="number" name="count" value="20" min="1" max="200" />
+          </label>
+          <label>
+            Language
+            <input type="text" name="lang" value="en" />
+          </label>
+          <label>
+            Country
+            <input type="text" name="country" value="us" />
+          </label>
+          <label>
+            Fields (comma separated)
+            <input type="text" name="fields" placeholder="appId,title" />
+          </label>
+          <button type="submit">Run</button>
+        </form>
+      </section>
+
+      <section class="panel" id="reviews-panel">
+        <h2>Reviews</h2>
+        <form data-action="reviews" class="stack" id="reviews-form">
+          <label>
+            App ID
+            <input type="text" name="appId" value="com.whatsapp" required />
+          </label>
+          <label>
+            Count
+            <input type="number" name="count" value="25" min="1" max="200" />
+          </label>
+          <label>
+            Language
+            <input type="text" name="lang" value="en" />
+          </label>
+          <label>
+            Country
+            <input type="text" name="country" value="us" />
+          </label>
+          <label>
+            Sort
+            <select name="sort">
+              <option value="NEWEST">NEWEST</option>
+              <option value="RATING">RATING</option>
+              <option value="HELPFULNESS">HELPFULNESS</option>
+            </select>
+          </label>
+          <label>
+            Fields (comma separated)
+            <input type="text" name="fields" placeholder="content,score" />
+          </label>
+          <button type="submit">Run</button>
+        </form>
+      </section>
+
+      <section class="panel" id="developer-panel">
+        <h2>Developer portfolio</h2>
+        <form data-action="developer" class="stack" id="developer-form">
+          <label>
+            Developer ID
+            <input type="text" name="developerId" value="5700313618786177705" required />
+          </label>
+          <label>
+            Count
+            <input type="number" name="count" value="25" min="1" max="200" />
+          </label>
+          <label>
+            Language
+            <input type="text" name="lang" value="en" />
+          </label>
+          <label>
+            Country
+            <input type="text" name="country" value="us" />
+          </label>
+          <label>
+            Fields (comma separated)
+            <input type="text" name="fields" placeholder="appId,title" />
+          </label>
+          <button type="submit">Run</button>
+        </form>
+      </section>
+    </main>
+
+    <section id="status-bar">
+      <span id="status-text">Ready</span>
+      <button id="clear-result" type="button">Clear result</button>
+    </section>
+
+    <section class="panel" id="result-panel">
+      <h2>Result</h2>
+      <pre id="result"></pre>
+    </section>
+
+    <script src="/ui/app.js" type="module"></script>
+  </body>
+</html>
