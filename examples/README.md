@@ -65,6 +65,11 @@ Demonstrates all 4 suggest methods:
 - `suggest_print_all()` - Print suggestions as JSON
 - `suggest_print_nested()` - Print nested suggestions as JSON
 
+### 8. ui_app.py
+Launches a Tkinter desktop interface that wraps the most common scraping
+flows (app analysis, search, reviews, developer portfolio).  Great for
+quick experiments without writing code.
+
 ## Running Examples
 
 ```bash
@@ -76,6 +81,7 @@ python examples/developer_methods_example.py
 python examples/list_methods_example.py
 python examples/similar_methods_example.py
 python examples/suggest_methods_example.py
+python examples/ui_app.py
 ```
 
 ## Note
